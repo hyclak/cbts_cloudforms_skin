@@ -1,5 +1,11 @@
 #!/bin/bash
 
+rpm -q patch >/dev/null
+if [ $? -ne 0 ]; then
+  echo "patch command is not installed, updating"
+  yum -y install patch
+fi
+
 sourcedir=`pwd`
 pushd /var/www/miq/vmdb/public
 
