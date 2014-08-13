@@ -1,0 +1,23 @@
+--- stylesheets/template.css.orig	2014-07-28 14:17:50.766953182 -0400
++++ stylesheets/template.css	2014-07-28 14:46:56.607196862 -0400
+@@ -167,11 +167,17 @@
+ #page_header_div.notaskbar {height:98px;}
+ #page_header_div.notaskbar.whitelabeled {height:110px;}
+ 
+-.header.rcue {height: 26px; background: #393f45; }
++/* Changed for VDC - MRH */
++/* .header.rcue {height: 26px; background: #393f45; } */
++.header.rcue { height: 135px; background:url(/images/layout/VDCInternalBanner.jpg) }
+ .header.rcue.whitelabeled {height: 38px;}
+ .header.rcue .pull-right{float:right; }
+-.header.rcue .brand { float:left;margin:0 0 0 20px;padding:7px 0; width:300px;color:#fff;text-shadow:none;}
+-.header.rcue .brand img{display:block;font-size:11px;}
++/* Changed for VDC - MRH */
++/* .header.rcue .brand { float:left;margin:0 0 0 20px;padding:7px 0; width:300px;color:#fff;text-shadow:none;} */
++.header.rcue .brand { float:left;margin:0 0 0 20px;padding:7px 0; width:000px;color:#fff;text-shadow:none;}
++/* Changed for VDC - MRH */
++/* .header.rcue .brand img{display:block;font-size:11px} */
++.header.rcue .brand img{display:block;font-size:11px;height: 19px}
+ .header.rcue.whitelabeled .brand  {padding:13px 0 14px 0;}
+ .header.rcue .brand-white-label.whitelabeled {float:right;width:350px; height: 38px;background:url(/upload/custom_logo.png) right top no-repeat;background-size: auto 38px;}
+ .ie8 .header.rcue .brand-white-label.whitelabeled {
