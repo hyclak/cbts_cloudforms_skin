@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sourcedir=`pwd`
 pushd /var/www/miq/vmdb/public
 
 # Deploy Images
@@ -8,7 +9,7 @@ FILES="RH-Product-Name.png VDCInternalBanner.jpg brand.svg login-screenground.jp
 
 for f in $FILES; do 
   cp $IMPATH/$f $IMPATH/${f}.back
-  install $f $IMPATH/$f 
+  install $sourcedir/$f $IMPATH/$f 
 done
 
 patch -p0 < login.patch
