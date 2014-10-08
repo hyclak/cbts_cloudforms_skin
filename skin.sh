@@ -10,11 +10,13 @@ sourcedir=`pwd`
 pushd /var/www/miq/vmdb/public
 
 # Deploy Images
-IMPATH="images/layout/"
+IMPATH="images/layout"
 FILES="RH-Product-Name.png VDCInternalBanner.jpg brand.svg login-screen-background.jpg login-screen-logo.png"
 
 for f in $FILES; do 
-  cp $IMPATH/$f $IMPATH/${f}.back
+  if [ -f $IMPATH/$f ]; then
+    cp $IMPATH/$f $IMPATH/${f}.back
+  fi
   install $sourcedir/$f $IMPATH/$f 
 done
 
