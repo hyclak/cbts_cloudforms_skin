@@ -1,23 +1,17 @@
---- stylesheets/login.css.orig	2014-08-05 12:37:36.214867165 -0400
-+++ stylesheets/login.css	2014-08-13 08:18:27.629894385 -0400
-@@ -163,12 +163,17 @@
- #rcue-login-screen .form {
+--- login.css.erb.orig	2014-09-29 09:20:30.000000000 -0400
++++ login.css.erb	2014-10-27 09:27:30.431513129 -0400
+@@ -162,10 +162,11 @@
+ #login-screen .form {
    position: absolute;
    bottom: 15%;
 -  padding-left: 100px;
 -  width: 100%;
-+  /* Changed for VDC Login, padding-left was 100px - MRH */
-+  /* padding-left: 500px; */
-+  /* Added for VDC Login to force right - MRH */
-+  right: 0px;
-+  /* Changed for VDC Login, width was 100% - MRH */
++  /* padding-left: 100px; */
 +  width: 10%;
++  right: 0px;
    min-width: 850px;
-   border-top: 1px rgba(255, 255, 255, 0.05) solid;
-   border-bottom: 1px rgba(255, 255, 255, 0.05) solid;
--  background-color: rgba(0, 0, 0, 0.3);
-+  /* Changed for VDC Login, was (0, 0, 0, 0.3)% - MRH */
+-  background-color: rgba(255, 255, 255, 0.055);
 +  background-color: rgba(0, 0, 0, 0.8);
  }
  
- .ie8 #rcue-login-screen .form {
+ .ie8 #login-screen .form {
