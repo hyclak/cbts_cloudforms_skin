@@ -1,39 +1,25 @@
-diff --git a/manageiq/vmdb/productization/assets/stylesheets/header.css.erb b/manageiq/vmdb/productization/assets/stylesheets/header.css.erb
-index 2217f69..98aa014 100644
---- a/manageiq/vmdb/productization/assets/stylesheets/header.css.erb
-+++ b/manageiq/vmdb/productization/assets/stylesheets/header.css.erb
-@@ -1,23 +1,24 @@
- #page_header_div.taskbar {
--  height: 131px;
-+  height: 240px;
-   margin-top: -2px !important
- }
- #page_header_div.taskbar.whitelabeled {
--  height: 142px;
-+  height: 251px;
+--- productization/assets/stylesheets/header.css.erb.orig	2014-09-29 09:20:30.000000000 -0400
++++ productization/assets/stylesheets/header.css.erb	2014-10-31 00:33:57.303350855 -0400
+@@ -6,15 +6,16 @@
+   height: 142px;
  }
  #page_header_div.notaskbar {
 -  height: 98px;
-+  height: 207px; 
++  height: 98px; 
    margin-top: -2px !important
  }
  #page_header_div.notaskbar.whitelabeled {
 -  height:110px;
-+  height: 219px;
++  height: 110px;
  }
  .header {
--  height: 26px;
+   height: 26px;
 -  background: #393f45;
-+  height: 135px;
 +  background-color: #0b0809 !important;
 +  background: url('/images/layout/VDCInternalBanner.jpg') right top no-repeat;
  }
  .header.whitelabeled {
--  height: 40px;
-+  height: 147px;
- }
- .header .pull-right{
-   float:right;
+   height: 40px;
 @@ -57,6 +58,7 @@
    height: 20px;
  }
@@ -51,4 +37,3 @@ index 2217f69..98aa014 100644
  }
  .header.whitelabeled li.dropdown {
    padding: 12px 10px 12px 10px;
-

@@ -1,0 +1,12 @@
+--- app/helpers/ui_constants.rb.orig    2014-10-31 14:23:12.435304246 -0400
++++ app/helpers/ui_constants.rb 2014-10-31 14:23:32.230304421 -0400
+@@ -105,8 +105,8 @@
+
+   # UI Themes
+   THEMES =  [
+-    ["Red", "red"],
+     ["Orange", "orange"],
++    ["Red", "red"],
+     ["Yellow", "yellow"],
+     ["Green", "green"],
+     ["Blue", "blue"],
