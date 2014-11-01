@@ -44,7 +44,7 @@ patch -p0 < $sourcedir/constants.diff
 
 # Rebuild assets in Cloud Forms
 echo "Rebuilding UI Assets"
-RAILS_ENV=production rake assets:clean
+rake evm:compile_assets
 
 echo "Branding complete"
 popd
