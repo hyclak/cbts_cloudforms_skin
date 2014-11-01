@@ -18,12 +18,12 @@ pushd /var/www/miq/vmdb
 echo "Deploying Images"
 
 # Backup the default branding if it hasn't been done
-if [ ! -f assets/images/layout/brand.svg ]; then
-  mv assets/images/layout/brand.svg assets/images/layout/brand.svg.orig
+if [ ! -f app/assets/images/layout/brand.svg ]; then
+  mv app/assets/images/layout/brand.svg app/assets/images/layout/brand.svg.orig
 fi
 
 # Deploy CBTS Brand in upper left corner
-install -m 644 $sourcedir/brand.svg assets/images/layout/brand.svg
+install -m 644 $sourcedir/brand.svg app/assets/images/layout/brand.svg
 
 # Deploy CBTS Header Banner
 install -m 644 $sourcedir/VDCInternalBanner.jpg public/images/layout/VDCInternalBanner.jpg
