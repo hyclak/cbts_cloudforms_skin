@@ -4,8 +4,8 @@
  #login-screen .form {
    position: absolute;
    bottom: 15%;
--  /* padding-left: 100px; */
--  width: 10%;
+-  padding-left: 100px;
+-  width: 100%;
 -  min-width: 850px;
    right: 0px;
 +  width: 0px;
