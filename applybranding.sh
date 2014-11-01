@@ -18,20 +18,25 @@ pushd /var/www/miq/vmdb
 echo "Deploying Images"
 
 # Backup the default branding if it hasn't been done
-if [ ! -f app/assets/images/layout/brand.svg ]; then
-  mv app/assets/images/layout/brand.svg app/assets/images/layout/brand.svg.orig
+if [ ! -f productization/assets/images/layout/brand.svg ]; then
+  mv productization/assets/images/layout/brand.svg productization/assets/images/layout/brand.svg.orig
 fi
 
 # Deploy CBTS Brand in upper left corner
-install -m 644 $sourcedir/brand.svg app/assets/images/layout/brand.svg
+install -m 644 $sourcedir/brand.svg productization/assets/images/layout/brand.svg
 
 # Deploy CBTS Header Banner
 install -m 644 $sourcedir/VDCInternalBanner.jpg public/images/layout/VDCInternalBanner.jpg
 
 # Patch the CSS
-echo "Patching CSS files"
-patch -p0 < $sourcedir/login.diff
-patch -p0 < $sourcedir/header.diff
+echo "Replacing CSS files"
+for file in header.css.erb login.css.erb; do
+  if [ ! -f productization/assets/stylesheets/${file}.orig ]; then
+    mv productization/assets/stylesheets/${file} productization/assets/stylesheets/${file}.orig
+  fi
+
+  install -m 644 $sourcedir/${file} productization/assets/stylesheets/${file}
+done
 
 # Patch the UI Constants (to make the top border Orange by default)
 echo "Patching UI Constants"
