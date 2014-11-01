@@ -18,8 +18,8 @@ pushd /var/www/miq/vmdb
 echo "Deploying Images"
 
 # Backup the default branding if it hasn't been done
-if [ ! -f app/assets/images/layout/brand.svg ]; then
-  mv app/assets/images/layout/brand.svg app/assets/images/layout/brand.svg.orig
+if [ ! -f productization/assets/images/layout/brand.svg ]; then
+  mv productization/assets/images/layout/brand.svg productization/assets/images/layout/brand.svg.orig
 fi
 
 # Deploy CBTS Brand in upper left corner
