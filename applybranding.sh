@@ -40,6 +40,15 @@ install -m 644 ${sourcedir}/login-screen-background.png public/upload/custom_log
 # Deploy CBTS Header Banner
 install -m 644 $sourcedir/internal-banner.jpg public/upload/internal-banner.jpg
 
+# Enable Custom Logos
+echo "Enabling Custom Logos"
+
+# Turn Custom Logo and Background on
+script/rails runner ${sourcedir}/enable_logos.rb
+
+# Adjust Visual Elements
+echo "Adjusting Visual Elements"
+
 # Darken the login bar backround (change 0.2 to 0.8 transparency)
 sed -i 's/\(\@login-container-bg-color-rgba:.*,\) 0.2);\(.*\)/\1 0.8);\2/' productization/assets/stylesheets/main.less
 
