@@ -35,6 +35,9 @@ install -m 644 $sourcedir/brand.svg productization/assets/images/brand.svg
 # TODO: This was handled in header.css.erb but is now done in patternfly. Need to figure out how to override that.
 # install -m 644 $sourcedir/VDCInternalBanner.jpg public/images/layout/VDCInternalBanner.jpg
 
+# Darken the login bar backround (change 0.2 to 0.8 transparency)
+sed -i 's/\(\@login-container-bg-color-rgba.*,\) 0.2);/\1 0.8);/' productization/assets/stylesheets/main.less
+
 # Rebuild assets in Cloud Forms
 echo "Rebuilding UI Assets"
 rake evm:compile_assets
