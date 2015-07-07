@@ -29,14 +29,25 @@ if [ ! -f ${sourcedir}/backup/brand.svg.orig ]; then
 fi
 
 # Deploy CBTS Brand in upper left corner
-install -m 644 $sourcedir/brand.svg productization/assets/images/brand.svg
+install -m 644 ${sourcedir}/brand.svg productization/assets/images/brand.svg
+
+# Deploy the custom logo (blank image to remove Red Hat branding from upper right of login screen)  
+install -m 644 ${sourcedir}/custom_logo.png public/upload/custom_logo.png
+
+# Deploy the login background
+install -m 644 ${sourcedir}/login-screen-background.png public/upload/custom_login_logo.png
 
 # Deploy CBTS Header Banner
-# TODO: This was handled in header.css.erb but is now done in patternfly. Need to figure out how to override that.
-# install -m 644 $sourcedir/VDCInternalBanner.jpg public/images/layout/VDCInternalBanner.jpg
+install -m 644 $sourcedir/internal-banner.jpg public/upload/internal-banner.jpg
 
 # Darken the login bar backround (change 0.2 to 0.8 transparency)
-sed -i 's/\(\@login-container-bg-color-rgba.*,\) 0.2);/\1 0.8);/' productization/assets/stylesheets/main.less
+sed -i 's/\(\@login-container-bg-color-rgba:.*,\) 0.2);\(.*\)/\1 0.8);\2/' productization/assets/stylesheets/main.less
+
+# Change the color of the top 3px bar from Red Hat Red to CBTS Orange
+sed -i 's/\(\@navbar-pf-border-color:.*\) #c00;\(.*\)/\1 #e48d25;\2/' productization/assets/stylesheets/main.less
+
+# Change the color of the navbar background to black with the internal banner image
+sed -i 's/\(@navbar-pf-bg-color:.*\) #393F45;\(.*\)/\1 #000000;\2/' productization/assets/stylesheets/main.less
 
 # Rebuild assets in Cloud Forms
 echo "Rebuilding UI Assets"
