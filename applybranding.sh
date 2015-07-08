@@ -28,8 +28,15 @@ if [ ! -f ${sourcedir}/backup/brand.svg.orig ]; then
   mv productization/assets/images/brand.svg ${sourcedir}/backup/brand.svg.orig
 fi
 
+if [ ! -f ${sourcedir}/backup/favicon.ico.orig ]; then
+  mv productization/assets/images/favicon.ico ${sourcedir}/backup/favicon.ico.orig
+fi
+
 # Deploy CBTS Brand in upper left corner
 install -m 644 ${sourcedir}/brand.svg productization/assets/images/brand.svg
+
+# Deploy the CBTS favicon
+install -m 644 ${sourcedir}/cbts-logo.ico productization/assets/images/favicon.ico
 
 # Deploy the custom logo (blank image to remove Red Hat branding from upper right of login screen)  
 install -m 644 ${sourcedir}/custom_logo.png public/upload/custom_logo.png
