@@ -67,7 +67,7 @@ sed -i 's/\(@navbar-pf-bg-color:.*\) #393F45;\(.*\)/\1 #000000;\2/' productizati
 
 # Rebuild assets in Cloud Forms
 echo "Rebuilding UI Assets"
-rake evm:compile_assets
+rake evm:compile_assets >/dev/null
 
 echo "Branding complete"
 popd
