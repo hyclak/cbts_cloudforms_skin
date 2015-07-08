@@ -5,5 +5,3 @@ Contact Matt Hyclak (matt.hyclak@cbts.net) or Eric Sarakaitis (eric.sarakaitis@c
 Instructions:
 
 1. Run applybranding.sh on the machine being branded
-2. Login through the Web Interface (Configure -> Configuration -> Select Appliance -> Custom Logos) and check the box to use a custom Logo Image
-3. Login through the Web Interface (Configure -> Configuration -> Select Appliance -> Custom Logos) and check the box to use a Custom Background Login Image
