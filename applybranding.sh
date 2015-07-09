@@ -66,11 +66,14 @@ sed -i 's/\(\@navbar-pf-border-color:.*\) #c00;\(.*\)/\1 #e48d25;\2/' productiza
 sed -i 's/\(@navbar-pf-bg-color:.*\) #393F45;\(.*\)/\1 #000000;\2/' productization/assets/stylesheets/main.less
 
 # Remove the small logo above the login box
-cat <<EOF >> productization/assets/stylesheets/main.less
+grep '.login-pf #brand' productization/assets/stylesheets/main.less >/dev/null
+if [ $? -ne 0 ]; then 
+  cat <<EOF >> productization/assets/stylesheets/main.less
 .login-pf #brand {
   display: none
 }
 EOF
+fi
 
 # Rebuild assets in Cloud Forms
 echo "Rebuilding UI Assets"
