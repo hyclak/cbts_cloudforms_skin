@@ -69,6 +69,8 @@ sed -i 's/\(@navbar-pf-bg-color:.*\) #393F45;\(.*\)/\1 #000000;\2/' productizati
 grep '.login-pf #brand' productization/assets/stylesheets/main.less >/dev/null
 if [ $? -ne 0 ]; then 
   cat <<EOF >> productization/assets/stylesheets/main.less
+
+// Additional CBTS customizations
 .login-pf #brand {
   display: none
 }
