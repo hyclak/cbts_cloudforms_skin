@@ -65,6 +65,13 @@ sed -i 's/\(\@navbar-pf-border-color:.*\) #c00;\(.*\)/\1 #e48d25;\2/' productiza
 # Change the color of the navbar background to black with the internal banner image
 sed -i 's/\(@navbar-pf-bg-color:.*\) #393F45;\(.*\)/\1 #000000;\2/' productization/assets/stylesheets/main.less
 
+# Remove the small logo above the login box
+cat <<EOF >> productization/assets/stylesheets/main.less
+.login-pf #brand {
+  display: none
+}
+EOF
+
 # Rebuild assets in Cloud Forms
 echo "Rebuilding UI Assets"
 rake evm:compile_assets >/dev/null
