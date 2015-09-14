@@ -38,6 +38,11 @@ install -m 644 ${sourcedir}/brand.svg productization/assets/images/brand.svg
 # Deploy the CBTS favicon
 install -m 644 ${sourcedir}/cbts-logo.ico productization/assets/images/favicon.ico
 
+# Make sure the public/upload folder exists. Only gets created on login to the appliance.
+if [ ! -d public/upload ]; then
+  mkdir public/upload
+fi
+
 # Deploy the custom logo (blank image to remove Red Hat branding from upper right of login screen)  
 install -m 644 ${sourcedir}/custom_logo.png public/upload/custom_logo.png
 
